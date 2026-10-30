@@ -1,22 +1,23 @@
 # Build log
 
-Written on Windows without Xcode. **The Swift code hasn't been compiled or
-run yet.** The first build on the Mac is the real check, so expect a few
-compile fixes. The layouts and the deal algorithm were checked by running the
-same logic in Node (see below).
+Written on Windows without Xcode. GitHub Actions (`.github/workflows/swift.yml`)
+builds it with XcodeGen and xcodebuild on macOS 15: the app builds for iPhone and
+iPad simulators and all 12 Swift Testing tests pass (2026-10-30). It has not been
+run by hand yet, so the device checks below are still open. The layouts and the
+deal algorithm were also checked by running the same logic in Node (see below).
 
 | ID | date | status | missing | harder than expected |
 | --- | --- | --- | --- | --- |
-| shell | 2026-10-30 | done (unbuilt) | — | — |
-| engine | 2026-10-30 | done (unbuilt, logic checked in Node) | special tiles, Bomb | Twin Peaks first started with only 2 free tiles, so its stacks were flattened |
-| S01 Home | 2026-10-30 | done (unbuilt) | — | — |
-| S02 Game | 2026-10-30 | done (unbuilt) | — | — |
-| iPad | 2026-10-30 | done (unbuilt) | — | menus, bars and cards are capped at phone-like widths; the board grows to fill the screen (tiles up to 130 pt); iPad rotates to any orientation, iPhone stays portrait |
-| S03 Daily | 2026-10-30 | done (unbuilt) | — | — |
-| S04 Win | 2026-10-30 | done (unbuilt) | — | — |
-| S05 Stuck | 2026-10-30 | done (unbuilt) | — | a shuffle can't always help (two matching tiles stacked on each other), so the card falls back to Undo and Restart |
-| S06 Pause | 2026-10-30 | done (unbuilt) | — | — |
-| S07/S08 Settings and scenes | 2026-10-30 | done (unbuilt) | — | — |
+| shell | 2026-10-30 | done (CI build) | — | — |
+| engine | 2026-10-30 | done (CI tests, logic checked in Node) | special tiles, Bomb | Twin Peaks first started with only 2 free tiles, so its stacks were flattened |
+| S01 Home | 2026-10-30 | done (CI build) | — | — |
+| S02 Game | 2026-10-30 | done (CI build) | — | — |
+| iPad | 2026-10-30 | done (CI build) | — | menus, bars and cards are capped at phone-like widths; the board grows to fill the screen (tiles up to 130 pt); iPad rotates to any orientation, iPhone stays portrait |
+| S03 Daily | 2026-10-30 | done (CI build) | — | — |
+| S04 Win | 2026-10-30 | done (CI build) | — | — |
+| S05 Stuck | 2026-10-30 | done (CI build) | — | a shuffle can't always help (two matching tiles stacked on each other), so the card falls back to Undo and Restart |
+| S06 Pause | 2026-10-30 | done (CI build) | — | — |
+| S07/S08 Settings and scenes | 2026-10-30 | done (CI build) | — | — |
 
 ## Layout check (Node port of `Engine/`)
 
