@@ -75,7 +75,8 @@ struct DealTests {
         for pair in board.solution.prefix(6) { board.remove(pair) }
         let before = board.remainingTiles.map(\.face).sorted { "\($0)" < "\($1)" }
         var rng = SeededRandom(seed: 42)
-        #expect(board.reshuffle(using: &rng))
+        let reshuffled = board.reshuffle(using: &rng)   // #expect can't call a mutating method
+        #expect(reshuffled)
         let after = board.remainingTiles.map(\.face).sorted { "\($0)" < "\($1)" }
         #expect(before == after)
         for pair in board.solution {
